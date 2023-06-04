@@ -1,0 +1,19 @@
+#Dynamic Programming
+
+class Solution(object):
+    def climbStairs(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        if n <= 2:
+            return n
+
+        one_step_before = 2  # f(2)
+        two_steps_before = 1  # f(1)
+
+        for i in range(3, n + 1):
+            current = one_step_before + two_steps_before  # f(i) = f(i-1) + f(i-2)
+            two_steps_before, one_step_before = one_step_before, current  # move forward one step
+
+        return one_step_before  # f(n)
