@@ -1,0 +1,20 @@
+class Solution(object):
+    def lengthOfLastWord(self, s):
+        s = s.rstrip()
+        words = s.split(" ")
+        last_word = words[-1]
+        return len(last_word)
+
+
+
+Let's use the example string " fly me to the moon ".
+
+s = s.rstrip(): This line removes any trailing whitespaces at the end of the string. In our case, " fly me to the moon " becomes " fly me to the moon". Notice that the spaces at the end of the string have been removed.
+
+words = s.split(" "): This line splits the string into a list of words. After this line, words will be the list ["", "", "", "fly", "me", "", "", "to", "", "", "the", "moon"]. Notice that the split function also includes the empty strings in between the words.
+
+last_word = words[-1]: This line selects the last word in the list. In our list, the last word is "moon". So, last_word is now "moon".
+
+return len(last_word): This line returns the length of last_word, which is "moon". The length of "moon" is 4, so the function returns 4.
+
+So for the string " fly me to the moon ", this function will return 4, because the last word is "moon" and "moon" has 4 letters. The trailing spaces do not affect the outcome because they were removed at the start by rstrip().
