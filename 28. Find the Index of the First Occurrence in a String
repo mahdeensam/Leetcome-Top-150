@@ -1,0 +1,23 @@
+#https://www.youtube.com/watch?v=Gjkhm1gYIMw
+
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        if not needle:
+            return 0
+        
+        needle_len = len(needle)
+        haystack_len = len(haystack)
+        
+        for i in range(haystack_len - needle_len + 1):
+            if haystack[i:i+needle_len] == needle:
+                return i
+        return -1
+
+class Solution(object):
+    def strStr(self, haystack, needle):
+        """
+        :type haystack: str
+        :type needle: str
+        :rtype: int
+        """
+        return haystack.find(needle)
