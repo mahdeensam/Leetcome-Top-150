@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=RElcqtFYTm0&t=966s
+
 class Solution(object):
     def maximalSquare(self, matrix):
         """
