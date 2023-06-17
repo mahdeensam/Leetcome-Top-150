@@ -1,0 +1,17 @@
+class Solution:
+    def wordPattern(self, pattern, s):
+        words = s.split(' ')
+        if len(pattern) != len(words): return False
+
+        mapping_pattern = {}
+        mapping_word = {}
+
+        for i in range(len(pattern)):
+            if pattern[i] in mapping_pattern and mapping_pattern[pattern[i]] != words[i]: return False
+            elif words[i] in mapping_word and mapping_word[words[i]] != pattern[i]: return False
+            else:
+                mapping_pattern[pattern[i]] = words[i]
+                mapping_word[words[i]] = pattern[i]
+                
+        return True
+
